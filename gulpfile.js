@@ -21,7 +21,7 @@ gulp.task('add', function(){
 
 // Run git commit with options
 gulp.task('commit', function(){
-    let timeStamp = new Date().toUTCString();
+    let timeStamp = new Date().getTime();
     
     return gulp.src('./git-test/*')
         .pipe(git.commit('screeps' + timeStamp, {args: '-a'}));
