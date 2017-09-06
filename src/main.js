@@ -19,11 +19,12 @@ module.exports.loop = function () {
     let creepsies = [Game.creeps['Alrik']];
     
     creepsies.forEach(creep => {
-        console.log(creep.name);
-        console.log(creep.carry);
-        console.log(creep.carryCapacity);
-        console.log(creep.id);
-        console.log(Game.time);
-        
+        if (creep) {
+            console.log(creep.name);
+            console.log(creep.carry);
+            console.log(creep.carryCapacity);
+            console.log(creep.id);
+            console.log(Game.time);
+        }
     });
 };
