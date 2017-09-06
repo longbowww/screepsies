@@ -11,17 +11,12 @@ module.exports.loop = function () {
         'Alrik9'
     ];
     
-    let g = Game.spawns['Spawn1'];
-    
-    g.createCreep([MOVE, WORK, CARRY], 'Alrik');
-    
-    let creepsies = [Game.creeps['Alrik']];
-    
     for (let creep in Game.creeps) {
-        console.log(creep.name);
-        console.log(creep.carry);
-        console.log(creep.carryCapacity);
-        console.log(creep.id);
+        let c = Game.creeps[creep];
+        console.log(c.name);
+        console.log(c.carry);
+        console.log(c.carryCapacity);
+        console.log(c.id);
         console.log(Game.time);
     }
 };
