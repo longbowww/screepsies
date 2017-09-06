@@ -7,6 +7,6 @@ module.exports.loop = function () {
         console.log(creep.carry);
         console.log(creep.carryCapacity);
         console.log(creep.id);
-        
+        console.log(Game.time);
     });
 };
