@@ -7,5 +7,6 @@ module.exports.loop = function () {
     Game.creeps.forEach(function (creep) {
         console.log(creep.name);
         console.log(creep.carry);
+        console.log(creep.carryCapacity);
     });
 };
