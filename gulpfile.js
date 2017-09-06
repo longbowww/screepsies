@@ -29,9 +29,13 @@ gulp.task('commit', function(){
         .pipe(git.commit(uuid.v4(), {args: '-a'}));
 });
 
-// Run git commit with options
+// Run git push
+// remote is the remote repo
+// branch is the remote branch to push to
 gulp.task('push', function(){
-    return git.push();
+    git.push('origin', 'master', function (err) {
+        if (err) throw err;
+    });
 });
 
 gulp.task("default", ["watch"]);
