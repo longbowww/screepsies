@@ -15,7 +15,7 @@ gulp.task("babel", function () {
 
 // Run git add
 // src is the file(s) to add (or ./*)
-gulp.task('add', function(){
+gulp.task('add', ['babel'], function(){
     return gulp.src('.')
         .pipe(git.add());
 });
