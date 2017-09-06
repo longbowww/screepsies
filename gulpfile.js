@@ -1,9 +1,10 @@
 const gulp = require("gulp");
 const babel = require("gulp-babel");
 const git = require("gulp-git");
+const uuid = require("uuid");
 
 gulp.task("watch", function () {
-    gulp.watch('src/main.js', ['babel', 'add', 'commit']);
+    gulp.watch('src/main.js', ['babel', 'add', 'commit', 'push']);
 });
 
 gulp.task("babel", function () {
@@ -21,10 +22,13 @@ gulp.task('add', function(){
 
 // Run git commit with options
 gulp.task('commit', function(){
-    let timeStamp = new Date().getTime();
-    
     return gulp.src('./git-test/*')
-        .pipe(git.commit('screeps' + timeStamp, {args: '-a'}));
+        .pipe(git.commit(uuid.v4(), {args: '-a'}));
+});
+
+// Run git commit with options
+gulp.task('push', function(){
+    return git.push();
 });
 
 gulp.task("default", ["watch"]);
