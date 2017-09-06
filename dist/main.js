@@ -2,7 +2,7 @@
 
 module.exports.loop = function () {
     var g = Game.spawns['Spawn1'];
-    g.createCreep(['MOVE', 'WORK', 'HARVEST'], 'Alrik');
+    g.createCreep([MOVE, WORK, HARVEST], 'Alrik');
 
     var creepsies = [Game.creeps['Alrik']];
 
