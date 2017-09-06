@@ -1,8 +1,8 @@
 'use strict';
 
 module.exports.loop = function () {
-    var g = Game.spawns['Gareth'];
-    g ? g.createCreep(['MOVE', 'WORK', 'HARVEST'], 'Alrik') : Game.spawns[Game.spawns.keys()[0]].name = 'Gareth';
+    var g = Game.spawns['Spawn1'];
+    g.createCreep(['MOVE', 'WORK', 'HARVEST'], 'Alrik');
 
     Game.creeps.forEach(function (creep) {
         console.log(creep.name);
