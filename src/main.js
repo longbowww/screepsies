@@ -12,7 +12,6 @@ module.exports.loop = function () {
     ];
     
     let g = Game.spawns['Spawn1'];
-    console.log(Array.from(Game.spawns));
     
     g.createCreep([MOVE, WORK, CARRY], 'Alrik');
     
