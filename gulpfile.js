@@ -2,9 +2,12 @@ const gulp = require("gulp");
 const babel = require("gulp-babel");
 const git = require("gulp-git");
 const uuid = require("uuid");
+const runSequence = require('run-sequence');
 
 gulp.task("watch", function () {
-    gulp.watch('src/main.js', ['babel', 'add', 'commit', 'push']);
+    gulp.watch('src/main.js', function() {
+        runSequence('babel', 'add', 'commit', 'push')
+    });
 });
 
 gulp.task("babel", function () {
